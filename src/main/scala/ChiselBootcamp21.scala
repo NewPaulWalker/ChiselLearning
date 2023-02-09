@@ -33,7 +33,6 @@ class PrintModuleTest(c:PrintingModule) extends PeekPokeTester(c){
 }
 object ChiselBootcamp21{
     def main(args :Array[String]):Unit ={
-        /*
         chisel3.Driver.execute(args, ()=>new Passthrough())
         val testResult = Driver(()=>new Passthrough()){
             c => new PeekPokeTester(c) {
@@ -56,7 +55,6 @@ object ChiselBootcamp21{
         }
         assert(testResult10)
         println("SUCCESS1!")
-         */
         chisel3.iotesters.Driver(()=>new PrintingModule){
             c => new PrintModuleTest(c)
         }
