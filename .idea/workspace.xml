@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/Passthrough.anno.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Passthrough.fir" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Passthrough.v" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" afterDir="false" />
+    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="ChiselBootcamp2.1.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,6 +75,14 @@
       <option name="presentableId" value="Default" />
       <updated>1675940880910</updated>
     </task>
+    <task id="LOCAL-00001" summary="ChiselBootcamp2.1.1">
+      <created>1675949231158</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1675949231158</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,5 +101,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="ChiselBootcamp2.1.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChiselBootcamp2.1.1" />
   </component>
 </project>

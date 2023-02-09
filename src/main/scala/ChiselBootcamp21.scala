@@ -9,9 +9,16 @@ class Passthrough extends Module{
     })
     io.out := io.in
 }
-
+class PassthroughGenerator(width: Int) extends Module{
+    val io = IO(new Bundle{
+        val in = Input(UInt(width.W))
+        val out = Output(UInt(width.W))
+    })
+    io.out := io.in
+}
 object ChiselBootcamp21{
     def main(args :Array[String]):Unit ={
-        chisel3.Driver.execute(args, ()=>new Passthrough())
+        //chisel3.Driver.execute(args, ()=>new Passthrough())
+        chisel3.Driver.execute(args, ()=>new PassthroughGenerator(10))
     }
 }
