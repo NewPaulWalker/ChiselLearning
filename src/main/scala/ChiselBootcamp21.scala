@@ -16,8 +16,24 @@ class PassthroughGenerator(width: Int) extends Module{
     })
     io.out := io.in
 }
+class PrintingModule extends Module{
+    val io = IO(new Bundle{
+        val in = Input(UInt(4.W))
+        val out = Output(UInt(4.W))
+    })
+    io.out := io.in
+    printf("Print during simulation: Input is %d\n", io.in)
+    printf(p"Print during simulation: IO is $io\n")
+    println(s"Print during generation: Input is ${io.in}")
+}
+class PrintModuleTest(c:PrintingModule) extends PeekPokeTester(c){
+    poke(c.io.in,3)
+    step(3)
+    println(s"Print during testing: Input is ${peek(c.io.in)}")
+}
 object ChiselBootcamp21{
     def main(args :Array[String]):Unit ={
+        /*
         chisel3.Driver.execute(args, ()=>new Passthrough())
         val testResult = Driver(()=>new Passthrough()){
             c => new PeekPokeTester(c) {
@@ -40,5 +56,9 @@ object ChiselBootcamp21{
         }
         assert(testResult10)
         println("SUCCESS1!")
+         */
+        chisel3.iotesters.Driver(()=>new PrintingModule){
+            c => new PrintModuleTest(c)
+        }
     }
 }
