@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="ChiselBootcamp2.1.1">
+    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="ChiselBootcamp2.1.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" afterDir="false" />
     </list>
@@ -82,7 +82,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675949231158</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ChiselBootcamp2.1.2">
+      <created>1675949584068</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1675949584068</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ChiselBootcamp2.1.2">
+      <created>1675949626029</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675949626029</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +118,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="ChiselBootcamp2.1.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChiselBootcamp2.1.1" />
+    <MESSAGE value="ChiselBootcamp2.1.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChiselBootcamp2.1.2" />
   </component>
 </project>

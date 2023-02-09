@@ -18,7 +18,19 @@ class PassthroughGenerator(width: Int) extends Module{
 }
 object ChiselBootcamp21{
     def main(args :Array[String]):Unit ={
-        //chisel3.Driver.execute(args, ()=>new Passthrough())
-        chisel3.Driver.execute(args, ()=>new PassthroughGenerator(10))
+        chisel3.Driver.execute(args, ()=>new Passthrough())
+        val testResult = Driver(()=>new Passthrough()){
+            c => new PeekPokeTester(c) {
+                poke(c.io.in,0)
+                expect(c.io.out,0)
+                poke(c.io.in,1)
+                expect(c.io.out,1)
+                poke(c.io.in,2)
+                expect(c.io.out,2)
+            }
+        }
+        assert(testResult)
+        println("SUCCESS")
+        //chisel3.Driver.execute(args, ()=>new PassthroughGenerator(10))
     }
 }
