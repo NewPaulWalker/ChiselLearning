@@ -31,6 +31,14 @@ object ChiselBootcamp21{
         }
         assert(testResult)
         println("SUCCESS")
-        //chisel3.Driver.execute(args, ()=>new PassthroughGenerator(10))
+        chisel3.Driver.execute(args, ()=>new PassthroughGenerator(10))
+        val testResult10 = Driver(()=>new PassthroughGenerator(10)){
+            c => new PeekPokeTester(c) {
+                poke(c.io.in, 1023)
+                expect(c.io.out, 1023)
+            }
+        }
+        assert(testResult10)
+        println("SUCCESS1!")
     }
 }
