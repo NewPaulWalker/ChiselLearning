@@ -1,0 +1,10 @@
+circuit ParameterizedAdder : @[:@2.0]
+  module ParameterizedAdder : @[:@3.2]
+    input clock : Clock @[:@4.4]
+    input reset : UInt<1> @[:@5.4]
+    input io_in_a : UInt<4> @[:@6.4]
+    input io_in_b : UInt<4> @[:@6.4]
+    output io_out : UInt<4> @[:@6.4]
+  
+    node sum = add(io_in_a, io_in_b) @[ChiselBootcamp22.scala 119:23:@8.4]
+    io_out <= bits(sum, 3, 0) @[ChiselBootcamp22.scala 123:16:@9.4]

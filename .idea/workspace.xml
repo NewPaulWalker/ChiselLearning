@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="ChiselBootcamp2.1.5">
+    <list default="true" id="c0e717c7-fa15-4590-b03a-e9de53bf91f8" name="变更" comment="ChiselBootcamp2.1.last">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/ChiselBootcamp21.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,9 +43,16 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;vcs.Git&quot;
   }
 }</component>
-  <component name="RunManager" selected="应用程序.ChiselBootcamp21">
+  <component name="RunManager" selected="应用程序.ChiselBootcamp22">
     <configuration name="ChiselBootcamp21" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="ChiselBootcamp21" />
+      <module name="ChiselLearning" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChiselBootcamp22" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="ChiselBootcamp22" />
       <module name="ChiselLearning" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -61,6 +67,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.ChiselBootcamp22" />
         <item itemvalue="应用程序.ChiselBootcamp21" />
         <item itemvalue="应用程序.Main" />
       </list>
@@ -110,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675951444195</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ChiselBootcamp2.1.last">
+      <created>1675951662288</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1675951662288</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -135,6 +149,7 @@
     <MESSAGE value="ChiselBootcamp2.1.2" />
     <MESSAGE value="ChiselBootcamp2.1.4" />
     <MESSAGE value="ChiselBootcamp2.1.5" />
-    <option name="LAST_COMMIT_MESSAGE" value="ChiselBootcamp2.1.5" />
+    <MESSAGE value="ChiselBootcamp2.1.last" />
+    <option name="LAST_COMMIT_MESSAGE" value="ChiselBootcamp2.1.last" />
   </component>
 </project>

@@ -1,0 +1,12 @@
+circuit MyOperatorsTwo : @[:@2.0]
+  module MyOperatorsTwo : @[:@3.2]
+    input clock : Clock @[:@4.4]
+    input reset : UInt<1> @[:@5.4]
+    input io_in : UInt<4> @[:@6.4]
+    output io_out_mux : UInt<4> @[:@6.4]
+    output io_out_cat : UInt<4> @[:@6.4]
+  
+    node _T_13 = mux(UInt<1>("h1"), UInt<2>("h3"), UInt<1>("h0")) @[ChiselBootcamp22.scala 38:22:@8.4]
+    node _T_16 = cat(UInt<2>("h2"), UInt<1>("h1")) @[Cat.scala 30:58:@10.4]
+    io_out_mux <= _T_13 @[ChiselBootcamp22.scala 38:16:@9.4]
+    io_out_cat <= _T_16 @[ChiselBootcamp22.scala 39:16:@11.4]

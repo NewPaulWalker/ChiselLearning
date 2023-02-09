@@ -1,0 +1,13 @@
+circuit MAC : @[:@2.0]
+  module MAC : @[:@3.2]
+    input clock : Clock @[:@4.4]
+    input reset : UInt<1> @[:@5.4]
+    input io_in_a : UInt<4> @[:@6.4]
+    input io_in_b : UInt<4> @[:@6.4]
+    input io_in_c : UInt<4> @[:@6.4]
+    output io_out : UInt<8> @[:@6.4]
+  
+    node _T_13 = mul(io_in_a, io_in_b) @[ChiselBootcamp22.scala 52:22:@8.4]
+    node _T_14 = add(_T_13, io_in_c) @[ChiselBootcamp22.scala 52:31:@9.4]
+    node _T_15 = tail(_T_14, 1) @[ChiselBootcamp22.scala 52:31:@10.4]
+    io_out <= _T_15 @[ChiselBootcamp22.scala 52:12:@11.4]
