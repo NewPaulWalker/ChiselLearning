@@ -1,0 +1,47 @@
+;buildInfoPackage: chisel3, version: 3.1.2, scalaVersion: 2.11.12, sbtVersion: 1.1.1, builtAtString: 2018-07-25 16:52:17.431, builtAtMillis: 1532537537431
+circuit GradLife : 
+  module GradLife : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {flip state : UInt<2>, flip coffee : UInt<1>, flip idea : UInt<1>, flip pressure : UInt<1>, nextState : UInt<2>}
+    
+    io.nextState <= UInt<2>("h00") @[ChiselBootcamp23.scala 209:18]
+    node _T_15 = eq(io.state, UInt<2>("h00")) @[ChiselBootcamp23.scala 211:19]
+    when _T_15 : @[ChiselBootcamp23.scala 211:28]
+      when io.coffee : @[ChiselBootcamp23.scala 212:24]
+        io.nextState <= UInt<2>("h01") @[ChiselBootcamp23.scala 213:26]
+        skip @[ChiselBootcamp23.scala 212:24]
+      else : @[ChiselBootcamp23.scala 214:28]
+        when io.idea : @[ChiselBootcamp23.scala 214:28]
+          io.nextState <= UInt<2>("h00") @[ChiselBootcamp23.scala 215:26]
+          skip @[ChiselBootcamp23.scala 214:28]
+        else : @[ChiselBootcamp23.scala 216:32]
+          when io.pressure : @[ChiselBootcamp23.scala 216:32]
+            io.nextState <= UInt<2>("h02") @[ChiselBootcamp23.scala 217:26]
+            skip @[ChiselBootcamp23.scala 216:32]
+      skip @[ChiselBootcamp23.scala 211:28]
+    else : @[ChiselBootcamp23.scala 219:36]
+      node _T_16 = eq(io.state, UInt<2>("h01")) @[ChiselBootcamp23.scala 219:25]
+      when _T_16 : @[ChiselBootcamp23.scala 219:36]
+        when io.coffee : @[ChiselBootcamp23.scala 220:24]
+          io.nextState <= UInt<2>("h01") @[ChiselBootcamp23.scala 221:26]
+          skip @[ChiselBootcamp23.scala 220:24]
+        else : @[ChiselBootcamp23.scala 222:43]
+          node _T_17 = or(io.idea, io.pressure) @[ChiselBootcamp23.scala 222:28]
+          when _T_17 : @[ChiselBootcamp23.scala 222:43]
+            io.nextState <= UInt<2>("h02") @[ChiselBootcamp23.scala 223:26]
+            skip @[ChiselBootcamp23.scala 222:43]
+        skip @[ChiselBootcamp23.scala 219:36]
+      else : @[ChiselBootcamp23.scala 225:38]
+        node _T_18 = eq(io.state, UInt<2>("h02")) @[ChiselBootcamp23.scala 225:25]
+        when _T_18 : @[ChiselBootcamp23.scala 225:38]
+          node _T_19 = or(io.coffee, io.idea) @[ChiselBootcamp23.scala 226:24]
+          when _T_19 : @[ChiselBootcamp23.scala 226:36]
+            io.nextState <= UInt<2>("h02") @[ChiselBootcamp23.scala 227:26]
+            skip @[ChiselBootcamp23.scala 226:36]
+          else : @[ChiselBootcamp23.scala 228:33]
+            when io.pressure : @[ChiselBootcamp23.scala 228:33]
+              io.nextState <= UInt<2>("h03") @[ChiselBootcamp23.scala 229:26]
+              skip @[ChiselBootcamp23.scala 228:33]
+          skip @[ChiselBootcamp23.scala 225:38]
+    

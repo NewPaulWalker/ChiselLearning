@@ -1,0 +1,48 @@
+;buildInfoPackage: chisel3, version: 3.1.2, scalaVersion: 2.11.12, sbtVersion: 1.1.1, builtAtString: 2018-07-25 16:52:17.431, builtAtMillis: 1532537537431
+circuit Polynomial : 
+  module Polynomial : 
+    input clock : Clock
+    input reset : UInt<1>
+    output io : {flip select : UInt<2>, flip x : SInt<32>, fOfX : SInt<32>}
+    
+    wire result : SInt<32> @[ChiselBootcamp23.scala 159:22]
+    wire square : SInt<32> @[ChiselBootcamp23.scala 160:22]
+    node _T_13 = mul(io.x, io.x) @[ChiselBootcamp23.scala 162:20]
+    square <= _T_13 @[ChiselBootcamp23.scala 162:12]
+    node _T_15 = eq(io.select, UInt<1>("h00")) @[ChiselBootcamp23.scala 163:20]
+    when _T_15 : @[ChiselBootcamp23.scala 163:28]
+      node _T_17 = mul(asSInt(UInt<3>("h02")), io.x) @[ChiselBootcamp23.scala 164:32]
+      node _T_18 = sub(square, _T_17) @[ChiselBootcamp23.scala 164:26]
+      node _T_19 = tail(_T_18, 1) @[ChiselBootcamp23.scala 164:26]
+      node _T_20 = asSInt(_T_19) @[ChiselBootcamp23.scala 164:26]
+      node _T_22 = add(_T_20, asSInt(UInt<2>("h01"))) @[ChiselBootcamp23.scala 164:39]
+      node _T_23 = tail(_T_22, 1) @[ChiselBootcamp23.scala 164:39]
+      node _T_24 = asSInt(_T_23) @[ChiselBootcamp23.scala 164:39]
+      result <= _T_24 @[ChiselBootcamp23.scala 164:16]
+      skip @[ChiselBootcamp23.scala 163:28]
+    else : @[ChiselBootcamp23.scala 165:34]
+      node _T_26 = eq(io.select, UInt<1>("h01")) @[ChiselBootcamp23.scala 165:26]
+      when _T_26 : @[ChiselBootcamp23.scala 165:34]
+        node _T_28 = mul(asSInt(UInt<3>("h02")), square) @[ChiselBootcamp23.scala 166:23]
+        node _T_30 = mul(asSInt(UInt<4>("h06")), io.x) @[ChiselBootcamp23.scala 166:38]
+        node _T_31 = add(_T_28, _T_30) @[ChiselBootcamp23.scala 166:32]
+        node _T_32 = tail(_T_31, 1) @[ChiselBootcamp23.scala 166:32]
+        node _T_33 = asSInt(_T_32) @[ChiselBootcamp23.scala 166:32]
+        node _T_35 = add(_T_33, asSInt(UInt<3>("h03"))) @[ChiselBootcamp23.scala 166:45]
+        node _T_36 = tail(_T_35, 1) @[ChiselBootcamp23.scala 166:45]
+        node _T_37 = asSInt(_T_36) @[ChiselBootcamp23.scala 166:45]
+        result <= _T_37 @[ChiselBootcamp23.scala 166:16]
+        skip @[ChiselBootcamp23.scala 165:34]
+      else : @[ChiselBootcamp23.scala 167:6]
+        node _T_39 = mul(asSInt(UInt<4>("h04")), square) @[ChiselBootcamp23.scala 168:23]
+        node _T_41 = mul(asSInt(UInt<5>("h0a")), io.x) @[ChiselBootcamp23.scala 168:39]
+        node _T_42 = sub(_T_39, _T_41) @[ChiselBootcamp23.scala 168:32]
+        node _T_43 = tail(_T_42, 1) @[ChiselBootcamp23.scala 168:32]
+        node _T_44 = asSInt(_T_43) @[ChiselBootcamp23.scala 168:32]
+        node _T_46 = sub(_T_44, asSInt(UInt<4>("h05"))) @[ChiselBootcamp23.scala 168:46]
+        node _T_47 = tail(_T_46, 1) @[ChiselBootcamp23.scala 168:46]
+        node _T_48 = asSInt(_T_47) @[ChiselBootcamp23.scala 168:46]
+        result <= _T_48 @[ChiselBootcamp23.scala 168:16]
+        skip @[ChiselBootcamp23.scala 167:6]
+    io.fOfX <= result @[ChiselBootcamp23.scala 171:13]
+    
