@@ -1,0 +1,15 @@
+circuit MyOptionalShiftRegister : @[:@2.0]
+  module MyOptionalShiftRegister : @[:@3.2]
+    input clock : Clock @[:@4.4]
+    input reset : UInt<1> @[:@5.4]
+    input io_en : UInt<1> @[:@6.4]
+    input io_in : UInt<1> @[:@6.4]
+    output io_out : UInt<65> @[:@6.4]
+  
+    reg state : UInt<65>, clock with :
+      reset => (UInt<1>("h0"), state) @[ChiselBootcamp24.scala 81:24:@8.4]
+    node _T_13 = shl(state, 1) @[ChiselBootcamp24.scala 82:28:@9.4]
+    node nextState = or(_T_13, io_in) @[ChiselBootcamp24.scala 82:34:@10.4]
+    node _GEN_0 = mux(io_en, nextState, state) @[ChiselBootcamp24.scala 83:16:@11.4]
+    io_out <= state @[ChiselBootcamp24.scala 86:12:@14.4]
+    state <= mux(reset, UInt<65>("h1"), bits(_GEN_0, 64, 0)) @[ChiselBootcamp24.scala 84:15:@12.6]
