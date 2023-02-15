@@ -1,0 +1,27 @@
+circuit My4ElementFir : @[:@2.0]
+  module My4ElementFir : @[:@3.2]
+    input clock : Clock @[:@4.4]
+    input reset : UInt<1> @[:@5.4]
+    input io_in : UInt<8> @[:@6.4]
+    output io_out : UInt<8> @[:@6.4]
+  
+    reg x_n1 : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), x_n1) @[ChiselBootcamp25.scala 10:23:@8.4]
+    reg x_n2 : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), x_n2) @[ChiselBootcamp25.scala 11:23:@10.4]
+    reg x_n3 : UInt<8>, clock with :
+      reset => (UInt<1>("h0"), x_n3) @[ChiselBootcamp25.scala 12:23:@12.4]
+    node _T_16 = mul(io_in, UInt<8>("h0")) @[ChiselBootcamp25.scala 13:21:@14.4]
+    node _T_18 = mul(x_n1, UInt<8>("h0")) @[ChiselBootcamp25.scala 13:40:@15.4]
+    node _T_19 = add(_T_16, _T_18) @[ChiselBootcamp25.scala 13:33:@16.4]
+    node _T_20 = tail(_T_19, 1) @[ChiselBootcamp25.scala 13:33:@17.4]
+    node _T_22 = mul(x_n2, UInt<8>("h0")) @[ChiselBootcamp25.scala 13:59:@18.4]
+    node _T_23 = add(_T_20, _T_22) @[ChiselBootcamp25.scala 13:52:@19.4]
+    node _T_24 = tail(_T_23, 1) @[ChiselBootcamp25.scala 13:52:@20.4]
+    node _T_26 = mul(x_n3, UInt<8>("h0")) @[ChiselBootcamp25.scala 13:78:@21.4]
+    node _T_27 = add(_T_24, _T_26) @[ChiselBootcamp25.scala 13:71:@22.4]
+    node _T_28 = tail(_T_27, 1) @[ChiselBootcamp25.scala 13:71:@23.4]
+    io_out <= bits(_T_28, 7, 0) @[ChiselBootcamp25.scala 13:12:@24.4]
+    x_n1 <= mux(reset, UInt<1>("h0"), io_in) @[ChiselBootcamp25.scala 10:23:@9.4]
+    x_n2 <= mux(reset, UInt<1>("h0"), x_n1) @[ChiselBootcamp25.scala 11:23:@11.4]
+    x_n3 <= mux(reset, UInt<1>("h0"), x_n2) @[ChiselBootcamp25.scala 12:23:@13.4]
